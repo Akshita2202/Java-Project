@@ -138,7 +138,6 @@ public class calculate_bill extends JFrame implements ActionListener
             aee.printStackTrace();
         }
 
-
     }
 
 

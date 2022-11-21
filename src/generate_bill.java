@@ -81,11 +81,11 @@ public class generate_bill extends JFrame implements ActionListener{
             String month = c2.getSelectedItem();
             t1.setText("\tReliance Power Limited\nELECTRICITY BILL FOR THE MONTH OF "+month+" ,2018\n\n\n");
 
-            ResultSet rs = c.s.executeQuery("select * from emp where meter_number="+c1.getSelectedItem());
+            ResultSet rs = c.s.executeQuery("select * from emp where MeterNumber="+c1.getSelectedItem());
 
             if(rs.next()){
                 t1.append("\n    Customer Name:"+rs.getString("name"));
-                t1.append("\n    Meter Number:  "+rs.getString("meter_number"));
+                t1.append("\n    Meter Number:  "+rs.getString("MeterNumber"));
                 t1.append("\n    Address:            "+rs.getString("address"));
                 t1.append("\n    State:                 "+rs.getString("state"));
                 t1.append("\n    City:                   "+rs.getString("city"));
@@ -94,27 +94,27 @@ public class generate_bill extends JFrame implements ActionListener{
                 t1.append("\n-------------------------------------------------------------");
                 t1.append("\n");
             }
+//
+//            rs = c.s.executeQuery("select * from tax");
+//
+//            if(rs.next()){
+//                t1.append("\n    Meter Location:"+rs.getString("meter_location"));
+//                t1.append("\n    Meter Type:      "+rs.getString("meter_type"));
+//                t1.append("\n    Phase Code:    "+rs.getString("phase_code"));
+//                t1.append("\n    Bill Type:         "+rs.getString("bill_type"));
+//                t1.append("\n    Days:               "+rs.getString("days"));
+//                t1.append("\n");
+//                t1.append("---------------------------------------------------------------");
+//                t1.append("\n\n");
+//                t1.append("\n    Meter Rent:\t\t"+rs.getString("meter_rent"));
+//                t1.append("\n    MCB Rent:  \t\t"+rs.getString("mcb_rent"));
+//                t1.append("\n    Service Tax:\t"+rs.getString("service_rent"));
+//                t1.append("\n    GST@9%:\t\t"+rs.getString("gst"));
+//                t1.append("\n");
+//
+//            }
 
-            rs = c.s.executeQuery("select * from tax");
-
-            if(rs.next()){
-                t1.append("\n    Meter Location:"+rs.getString("meter_location"));
-                t1.append("\n    Meter Type:      "+rs.getString("meter_type"));
-                t1.append("\n    Phase Code:    "+rs.getString("phase_code"));
-                t1.append("\n    Bill Type:         "+rs.getString("bill_type"));
-                t1.append("\n    Days:               "+rs.getString("days"));
-                t1.append("\n");
-                t1.append("---------------------------------------------------------------");
-                t1.append("\n\n");
-                t1.append("\n    Meter Rent:\t\t"+rs.getString("meter_rent"));
-                t1.append("\n    MCB Rent:  \t\t"+rs.getString("mcb_rent"));
-                t1.append("\n    Service Tax:\t"+rs.getString("service_rent"));
-                t1.append("\n    GST@9%:\t\t"+rs.getString("gst"));
-                t1.append("\n");
-
-            }
-
-            rs = c.s.executeQuery("select * from bill where meter_number="+c1.getSelectedItem());
+            rs = c.s.executeQuery("select * from bill where MeterNumber="+c1.getSelectedItem());
 
             if(rs.next()){
                 t1.append("\n    Current Month :\t"+rs.getString("month"));
