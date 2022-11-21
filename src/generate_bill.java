@@ -114,6 +114,7 @@ public class generate_bill extends JFrame implements ActionListener{
 //
 //            }
 
+
             rs = c.s.executeQuery("select * from bill where MeterNumber="+c1.getSelectedItem());
 
             if(rs.next()){

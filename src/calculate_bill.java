@@ -46,18 +46,9 @@ public class calculate_bill extends JFrame implements ActionListener
         c1 = new Choice();
 
         for (int i =0; i< l.size();i++){
-            c1.add((String) l.get(i));
+            c1.add(String.valueOf(l.get(i)));
         }
 
-//        c1.add("1002");
-//        c1.add("1003");
-//        c1.add("1004");
-//        c1.add("1005");
-//        c1.add("1006");
-//        c1.add("1007");
-//        c1.add("1008");
-//        c1.add("1009");
-//        c1.add("1010");
 
         c2 = new Choice();
         c2.add("January");
@@ -87,8 +78,6 @@ public class calculate_bill extends JFrame implements ActionListener
         ImageIcon i3 = new ImageIcon(i2);
         l4 = new JLabel(i3);
 
-
-
         l1.setFont(new Font("Senserif",Font.PLAIN,26));
         //Move the label to center
         l1.setHorizontalAlignment(JLabel.CENTER);
@@ -112,14 +101,13 @@ public class calculate_bill extends JFrame implements ActionListener
 
 
         b1.addActionListener(this);
-        b2.addActionListener(this);
 
         getContentPane().setBackground(Color.WHITE);
         setSize(650,500);
         setLocation(350,220);
     }
     public void actionPerformed(ActionEvent ae){
-        String a = c1.getSelectedItem();
+        int a = Integer.parseInt(c1.getSelectedItem());
         String b = t1.getText();
         String c = c2.getSelectedItem();
 
@@ -128,7 +116,7 @@ public class calculate_bill extends JFrame implements ActionListener
         int p2 = p1*7;
         int p3 = p2+50+12+102+20+50;
 
-        String q = "insert into bill values('"+a+"','"+c+"','"+b+"','"+p3+"')";
+        String q = "insert into bill values('"+a+"','"+c+"','"+p1+"','"+p3+"')";
 
         try{
             conn c1 = new conn();
