@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class generate_bill extends JFrame implements ActionListener{
     JLabel l1;
@@ -17,21 +18,29 @@ public class generate_bill extends JFrame implements ActionListener{
         p1 = new JPanel();
 
         l1 = new JLabel("Generate Bill");
+        conn c = new conn();
+
+        List l_meter = new ArrayList();
+
+
+        try{
+            String a = "select * from emp";
+            ResultSet rs = c.s.executeQuery(a);
+            while (rs.next()){
+                String con = rs.getString("MeterNumber");
+                l_meter.add(con);
+            }
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
 
         c1 = new Choice();
         c2 = new Choice();
 
-        c1.add("1001");
-//        c1.add("1002");
-//        c1.add("1003");
-//        c1.add("1004");
-//        c1.add("1005");
-//        c1.add("1006");
-//        c1.add("1007");
-//        c1.add("1008");
-//        c1.add("1009");
-//        c1.add("1010");
-
+        for (int y =0 ; y< l_meter.size(); y++){
+            c1.add((String) l_meter.get(y));
+        }
 
         c2.add("January");
         c2.add("February");
