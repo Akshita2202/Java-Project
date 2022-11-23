@@ -79,7 +79,7 @@ public class generate_bill extends JFrame implements ActionListener{
             conn c = new conn();
 
             String month = c2.getSelectedItem();
-            t1.setText("\tReliance Power Limited\nELECTRICITY BILL FOR THE MONTH OF "+month+" ,2018\n\n\n");
+            t1.setText("\tElectricity Billing System (GP-3)\nELECTRICITY BILL FOR THE MONTH OF "+month+" ,2018\n\n\n");
 
             ResultSet rs = c.s.executeQuery("select * from emp where MeterNumber="+c1.getSelectedItem());
 
