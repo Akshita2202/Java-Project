@@ -68,7 +68,7 @@ public class LastBill extends JFrame implements ActionListener
 
             if(rs.next()){
                 t1.append("\n    Customer Name:"+rs.getString("name"));
-                t1.append("\n    Meter Number:  "+rs.getString("meter_number"));
+                t1.append("\n    Meter Number:  "+rs.getString("MeterNumber"));
                 t1.append("\n    Address:            "+rs.getString("address"));
                 t1.append("\n    State:                 "+rs.getString("state"));
                 t1.append("\n    City:                   "+rs.getString("city"));
@@ -80,7 +80,7 @@ public class LastBill extends JFrame implements ActionListener
 
             t1.append("Details of the Last Bills\n\n\n");
 
-            rs = c.s.executeQuery("select * from bill where meter_number="+c1.getSelectedItem());
+            rs = c.s.executeQuery("select * from bill where MeterNumber="+c1.getSelectedItem());
 
             while(rs.next()){
                 t1.append("       "+ rs.getString("month") + "           " +rs.getString("amount") + "\n");

@@ -42,18 +42,10 @@ public class Project extends JFrame implements ActionListener{
         m2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, ActionEvent.CTRL_MASK));
         m2.setBackground(Color.WHITE);
 
-        /* ---- Deposit Details  ----- */
-        m3.setFont(new Font("monospaced",Font.PLAIN,12));
-        ImageIcon icon3 = new ImageIcon(ClassLoader.getSystemResource("images/icon3.png"));
-        Image image3 = icon3.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
-        m3.setIcon(new ImageIcon(image3));
-        m3.setMnemonic('N');
-        m3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
-        m3.setBackground(Color.WHITE);
 
         m1.addActionListener(this);
         m2.addActionListener(this);
-        m3.addActionListener(this);
+
 
         // --------------------------------------------------------------------------------------------
 
@@ -171,7 +163,6 @@ public class Project extends JFrame implements ActionListener{
 
         master.add(m1);
         master.add(m2);
-        master.add(m3);
 
 
         user.add(u2);
