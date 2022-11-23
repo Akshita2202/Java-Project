@@ -95,8 +95,10 @@ public class generate_bill extends JFrame implements ActionListener{
                 t1.append("\n");
             }
 
+            String query = "select * from bill where MeterNumber='"+c1.getSelectedItem()+"'and Month='"+month+"'";
 
-            rs = c.s.executeQuery("select * from bill where MeterNumber="+c1.getSelectedItem());
+
+            rs = c.s.executeQuery(query);
 
             if(rs.next()){
                 t1.append("\n    Current Month :\t"+rs.getString("month"));

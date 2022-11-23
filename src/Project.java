@@ -60,19 +60,10 @@ public class Project extends JFrame implements ActionListener{
 
         /* Second Column */
         JMenu user = new JMenu("User");
-        JMenuItem u1 = new JMenuItem("Pay Bill");
         JMenuItem u2 = new JMenuItem("Calculate Bill");
         JMenuItem u3 = new JMenuItem("Last Bill");
         user.setForeground(Color.RED);
 
-        /* ---- Pay Bill ---- */
-        u1.setFont(new Font("monospaced",Font.PLAIN,12));
-        ImageIcon icon4 = new ImageIcon(ClassLoader.getSystemResource("images/icon4.png"));
-        Image image4 = icon4.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
-        u1.setIcon(new ImageIcon(image4));
-        u1.setMnemonic('P');
-        u1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
-        u1.setBackground(Color.WHITE);
 
         /* ---- Bill Details ---- */
         u2.setFont(new Font("monospaced",Font.PLAIN,12));
@@ -92,7 +83,7 @@ public class Project extends JFrame implements ActionListener{
         u3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
         u3.setBackground(Color.WHITE);
 
-        u1.addActionListener(this);
+//        u1.addActionListener(this);
         u2.addActionListener(this);
         u3.addActionListener(this);
 
@@ -180,9 +171,9 @@ public class Project extends JFrame implements ActionListener{
 
         master.add(m1);
         master.add(m2);
-        //master.add(m3);
+        master.add(m3);
 
-        user.add(u1);
+
         user.add(u2);
         user.add(u3);
 
@@ -217,9 +208,6 @@ public class Project extends JFrame implements ActionListener{
         }else if(msg.equals("Calculate Bill")){
             new calculate_bill().setVisible(true);
 
-        }else if(msg.equals("Pay Bill")){
-            new pay_bill().setVisible(true);
-
         }else if(msg.equals("Notepad")){
             try{
                 Runtime.getRuntime().exec("notepad.exe");
@@ -230,7 +218,7 @@ public class Project extends JFrame implements ActionListener{
             }catch(Exception e){ }
         }else if(msg.equals("Web Browser")){
             try{
-                Runtime.getRuntime().exec("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+                Runtime.getRuntime().exec("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
             }catch(Exception e){ }
         }else if(msg.equals("Exit")){
             System.exit(0);
